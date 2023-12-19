@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    command: npm run start:dev
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CORS_ORIGINS=http://localhost:3000,http://localhost:5173,https://api.webrtc.chambe.dev:3000,https://api.webrtc.chambe.dev,https://camera.chambe.dev

@@ -58,15 +58,29 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
-## Support
+## Docker
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+# build image
+$ docker build -t webrtc-back --no-cache .
 
-## Stay in touch
+# run container
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+$ docker run -d -p 3000:3000 --name webrtc-back webrtc-back
+
+# stop container
+
+$ docker stop webrtc-back
+
+# remove container
+
+$ docker rm webrtc-back
+
+# save image to file
+
+$ docker save webrtc-back > webrtc-back.tar
+
+
 
 ## License
 
